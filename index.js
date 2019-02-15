@@ -6,7 +6,7 @@ var inTopics = 'Armario/Relay/#';
 
 var soilPin = "a1";
 var relayPins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-var relays = [];
+var relays = {};
 var buttonPins = [12, 13];
 var buttons = {};
 
@@ -50,16 +50,17 @@ myBoard.on("ready", function () {
 
     client.on('message', (topic, payload) => {
         if (topic.startsWith("Armario/Relay/")) {
-            let pinNumber = parseInt(topic.split("/")[2]);
-            let relay = relays[pinNumber];
-            if (!relay)
+            let pinNumber = topic.split("/")[2];
+            
+            if (!relays.hasOwnPropery(pinNumber)){
                 return;
-
-            var message = payload.toString();
-            if (message === "1")
-                relay.on();
-            else if (message === "0")
-                relay.off();
+            }
+            
+            if (payload == "1"){
+                relays[pinNumber].on();
+            } else {
+                relays[pinNumber].off();
+            }
         }
 
     });
