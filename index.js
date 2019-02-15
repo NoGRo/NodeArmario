@@ -5,9 +5,10 @@ var intervalSensors = 3 * (60 * 1000);
 var inTopics = 'Armario/Relay/#';
 
 var soilPin = "a1";
-var relayPins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var dhtPin = 11
+var relayPins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12,13];
 var relays = {};
-var buttonPins = [12, 13];
+var buttonPins = [];
 var buttons = {};
 
 
@@ -16,9 +17,9 @@ myBoard.on("ready", function () {
 
     var soil = new five.Sensor(soilPin);
 
-    var dht22 = new five.Multi({
+    var dht = new five.Multi({
         controller: "DHT22_I2C_NANO_BACKPACK",
-        pin: 11,
+        pin: dhtPin,
     });
 
     buttonPins.forEach(pinNumber => {
@@ -43,7 +44,7 @@ myBoard.on("ready", function () {
         const button = buttons[key];
         events.forEach(event => {
             button.on(event, () => {
-                client.publish("Armario/Boton/" + event + "/" + this.pin, this.downValue);
+                client.publish("Armario/Boton/" + this.pin + "/"+ event ,  this.downValue);
             });
         });
     }
@@ -62,11 +63,10 @@ myBoard.on("ready", function () {
                 relays[pinNumber].off();
             }
         }
-
     });
     function informarSensores() {
-        client.publish("Armario/Temperatura", dht22.thermometer.celsius);
-        client.publish("Armario/Humedad", dht22.hygrometer.relativeHumidity);
+        client.publish("Armario/Temperatura", dht.thermometer.celsius);
+        client.publish("Armario/Humedad", dht.hygrometer.relativeHumidity);
         client.publish("Armario/HumedadSuelo", soil.value);
     }
 
