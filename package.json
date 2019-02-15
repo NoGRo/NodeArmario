@@ -18,6 +18,7 @@
   "homepage": "https://github.com/nogro/NodeArmario#readme",
   "dependencies": {
     "johnny-five": "^1.0.0",
-    "mqtt": "^2.18.8"
+    "mqtt": "^2.18.8",
+    "pcduino-io": "^0.3.0"
   }
 }

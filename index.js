@@ -6,14 +6,34 @@ var inTopics = 'Armario/Relay/#';
 
 var soilPin = "a1";
 var dhtPin = 11
-var relayPins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12,13];
+var relayPins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13];
 var relays = {};
 var buttonPins = [];
 var buttons = {};
 
+function GetBoard() {
+    return new Promise((resolve, reject) => {
+        var board = new five.Board({
+            io: new firmata()
+        });
+        board.on("ready", () => {
+            resolve(board);
+        });
+        board.on("error", () => {
+            reject();
+        });
+    });
+}
 
-myBoard = new five.Board();
-myBoard.on("ready", function () {
+function GetMqttClient() {
+    return new Promise((resolve, reject) => {
+        var cli = mqtt.connect({ host: "localhost", port: "1883" });
+        cli.on('connect', () => { resolve(cli); });
+    });
+}
+async function f() {
+    var myBoard = await GetBoard();
+    var client = await GetMqttClient();
 
     var soil = new five.Sensor(soilPin);
 
@@ -30,44 +50,41 @@ myBoard.on("ready", function () {
         relays[pinNumber] = five.Relay(pinNumber);
     });
 
-    var options = { host: "localhost", port: "1883" };
 
-    var client = mqtt.connect(options);
-    client.on('connect', function () {
-        client.subscribe(inTopics);
-        informarSensores();
-        setInterval(informarSensores, intervalSensors);
-    });
+    client.subscribe(inTopics);
+
+    informarSensores();
+    setInterval(informarSensores, intervalSensors);
 
     const events = ["hold", "press", "up"];
     for (const key in buttons) {
         const button = buttons[key];
         events.forEach(event => {
             button.on(event, () => {
-                client.publish("Armario/Boton/" + this.pin + "/"+ event ,  this.downValue);
+                client.publish("Armario/Boton/" + this.pin + "/" + event, this.downValue);
             });
         });
     }
 
+
     client.on('message', (topic, payload) => {
         if (topic.startsWith("Armario/Relay/")) {
             let pinNumber = topic.split("/")[2];
-            
-            if (!relays.hasOwnPropery(pinNumber)){
-                return;
-            }
-            
-            if (payload == "1"){
+
+            if (!relays.hasOwnPropery(pinNumber))
+                return; cancelAnimationFrame
+
+            if (payload == "1")
                 relays[pinNumber].on();
-            } else {
+            else
                 relays[pinNumber].off();
-            }
         }
     });
+
     function informarSensores() {
         client.publish("Armario/Temperatura", dht.thermometer.celsius);
         client.publish("Armario/Humedad", dht.hygrometer.relativeHumidity);
         client.publish("Armario/HumedadSuelo", soil.value);
     }
-
-});
+}
+f();
