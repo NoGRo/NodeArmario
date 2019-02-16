@@ -1,0 +1,2100 @@
+[
+    {
+        "id": "ca9c2265.e239b",
+        "type": "tab",
+        "label": "Riego",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d74a6eaf.194c3",
+        "type": "tab",
+        "label": "Medioambiente",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "544987cc.a65b88",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "891528f7.8683f8",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "pcduino",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "192.168.1.106",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "f26d06d9.a9b048",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c76dc451.447488",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5bdd3337.c7b27c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Temperatura",
+        "tab": "c76dc451.447488",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c66ccf20.2810c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Humedad",
+        "tab": "c76dc451.447488",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1db00bd9.c56a94",
+        "type": "ui_group",
+        "z": "",
+        "name": "Medioambiente",
+        "tab": "c76dc451.447488",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ef47ba1f.91c1a8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Riego",
+        "tab": "c76dc451.447488",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "922ca609.efa928",
+        "type": "mqtt in",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "topic": "Armario/Temperatura",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 105,
+        "y": 312,
+        "wires": [
+            [
+                "a6b2b871.14e628",
+                "18388d46.002fc3"
+            ]
+        ]
+    },
+    {
+        "id": "a6b2b871.14e628",
+        "type": "ui_gauge",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "group": "5bdd3337.c7b27c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#8080ff",
+            "#80ff00",
+            "#ca3838"
+        ],
+        "seg1": "18",
+        "seg2": "26",
+        "x": 453,
+        "y": 299,
+        "wires": []
+    },
+    {
+        "id": "18388d46.002fc3",
+        "type": "ui_chart",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "group": "5bdd3337.c7b27c",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "label": "Hisotry",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 463,
+        "y": 411,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e858a008.97d14",
+        "type": "mqtt in",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "topic": "Armario/Temperature/Target",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 125,
+        "y": 426,
+        "wires": [
+            [
+                "18388d46.002fc3"
+            ]
+        ]
+    },
+    {
+        "id": "36f96a07.f3b5f6",
+        "type": "mqtt in",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "topic": "Armario/Humedad",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 95,
+        "y": 521,
+        "wires": [
+            [
+                "4ce96b3b.bcdf04",
+                "1bc91731.7aa4a9"
+            ]
+        ]
+    },
+    {
+        "id": "4ce96b3b.bcdf04",
+        "type": "ui_gauge",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "group": "c66ccf20.2810c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "99",
+        "colors": [
+            "#ff0000",
+            "#ffff00",
+            "#6000bf"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "x": 459,
+        "y": 496,
+        "wires": []
+    },
+    {
+        "id": "1bc91731.7aa4a9",
+        "type": "ui_chart",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "group": "c66ccf20.2810c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Hisotry",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "20",
+        "ymax": "99",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 437,
+        "y": 581,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ded5687b.296e88",
+        "type": "mqtt in",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "topic": "Armario/Humedad/Target",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 115,
+        "y": 602,
+        "wires": [
+            [
+                "1bc91731.7aa4a9"
+            ]
+        ]
+    },
+    {
+        "id": "fbe757b9.fd4978",
+        "type": "ui_numeric",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "Humedad",
+        "tooltip": "",
+        "group": "1db00bd9.c56a94",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "Armario/Humedad/Target",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "99",
+        "step": 1,
+        "x": 126,
+        "y": 818,
+        "wires": [
+            [
+                "71834098.fd0ae",
+                "1bc91731.7aa4a9"
+            ]
+        ]
+    },
+    {
+        "id": "563c969b.6b69e8",
+        "type": "mqtt in",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "topic": "Armario/Temperatura",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 126,
+        "y": 151,
+        "wires": [
+            [
+                "beec1355.3449b"
+            ]
+        ]
+    },
+    {
+        "id": "beec1355.3449b",
+        "type": "switch",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "TemperaturaTarget",
+                "vt": "global"
+            },
+            {
+                "t": "gte",
+                "v": "TemperaturaTarget",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 327,
+        "y": 151,
+        "wires": [
+            [
+                "2f35e0b.11d062"
+            ],
+            [
+                "c9e774fd.214028"
+            ]
+        ]
+    },
+    {
+        "id": "2f35e0b.11d062",
+        "type": "change",
+        "z": "d74a6eaf.194c3",
+        "name": "On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 492,
+        "y": 92,
+        "wires": [
+            [
+                "c720b33a.6a132"
+            ]
+        ]
+    },
+    {
+        "id": "c9e774fd.214028",
+        "type": "change",
+        "z": "d74a6eaf.194c3",
+        "name": "Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 491,
+        "y": 223,
+        "wires": [
+            [
+                "c720b33a.6a132"
+            ]
+        ]
+    },
+    {
+        "id": "c720b33a.6a132",
+        "type": "mqtt out",
+        "z": "d74a6eaf.194c3",
+        "name": "VentiladorSodio",
+        "topic": "Armario/Relay/5",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 707,
+        "y": 152,
+        "wires": []
+    },
+    {
+        "id": "16cd2dc2.ccee62",
+        "type": "mqtt out",
+        "z": "d74a6eaf.194c3",
+        "name": "Ventilador Armario ",
+        "topic": "Armario/Relay/2",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 687,
+        "y": 550,
+        "wires": []
+    },
+    {
+        "id": "808f7c30.5fd6b",
+        "type": "mqtt out",
+        "z": "d74a6eaf.194c3",
+        "name": "Luz",
+        "topic": "Armario/Relay/1",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 780,
+        "y": 828,
+        "wires": []
+    },
+    {
+        "id": "5c1ca9ad.9f1758",
+        "type": "mqtt out",
+        "z": "d74a6eaf.194c3",
+        "name": "Ventilador Interno",
+        "topic": "Armario/Relay/2",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 685,
+        "y": 632,
+        "wires": []
+    },
+    {
+        "id": "6fe820a2.62592",
+        "type": "mqtt out",
+        "z": "d74a6eaf.194c3",
+        "name": "Desumidificador",
+        "topic": "Armario/Relay/8",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 697,
+        "y": 370,
+        "wires": []
+    },
+    {
+        "id": "a6f11e37.23b69",
+        "type": "inject",
+        "z": "d74a6eaf.194c3",
+        "name": "Global V A Encendido",
+        "topic": "",
+        "payload": "VentiladorArmarioEncendido",
+        "payloadType": "global",
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 145,
+        "y": 552,
+        "wires": [
+            [
+                "16cd2dc2.ccee62"
+            ]
+        ]
+    },
+    {
+        "id": "b51205de.013988",
+        "type": "inject",
+        "z": "d74a6eaf.194c3",
+        "name": "Global V P Intermitente",
+        "topic": "",
+        "payload": "VentiladorInternoIntermitente",
+        "payloadType": "global",
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 633,
+        "wires": [
+            [
+                "1aa1300.f7af4d"
+            ]
+        ]
+    },
+    {
+        "id": "1aa1300.f7af4d",
+        "type": "trigger",
+        "z": "d74a6eaf.194c3",
+        "op1": "",
+        "op2": "0",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 444,
+        "y": 631,
+        "wires": [
+            [
+                "5c1ca9ad.9f1758"
+            ]
+        ]
+    },
+    {
+        "id": "4eae49bc.3e6e08",
+        "type": "mqtt in",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "topic": "Armario/Humedad",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 127,
+        "y": 365,
+        "wires": [
+            [
+                "233a3c5a.8032b4"
+            ]
+        ]
+    },
+    {
+        "id": "233a3c5a.8032b4",
+        "type": "switch",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "HumedadTarget",
+                "vt": "global"
+            },
+            {
+                "t": "gte",
+                "v": "HumedadTarget",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 355,
+        "y": 365,
+        "wires": [
+            [
+                "738ad148.bcaa8"
+            ],
+            [
+                "273d26ef.f48a4a"
+            ]
+        ]
+    },
+    {
+        "id": "738ad148.bcaa8",
+        "type": "change",
+        "z": "d74a6eaf.194c3",
+        "name": "On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 504,
+        "y": 301,
+        "wires": [
+            [
+                "6fe820a2.62592"
+            ]
+        ]
+    },
+    {
+        "id": "273d26ef.f48a4a",
+        "type": "change",
+        "z": "d74a6eaf.194c3",
+        "name": "Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 503,
+        "y": 432,
+        "wires": [
+            [
+                "6fe820a2.62592"
+            ]
+        ]
+    },
+    {
+        "id": "73f996bc.323f78",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Bomba Vaciado ",
+        "topic": "Armario/Relay/7",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 890,
+        "y": 170,
+        "wires": []
+    },
+    {
+        "id": "65d9ffe5.c7613",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Aireador",
+        "topic": "Armario/Relay/3",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 638,
+        "y": 635,
+        "wires": []
+    },
+    {
+        "id": "b1cd4950.2888e8",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Bomba Riego",
+        "topic": "Armario/Relay/6",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 878,
+        "y": 572,
+        "wires": []
+    },
+    {
+        "id": "d961a01b.11978",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Bomba Elevadora",
+        "topic": "Armario/Relay/4",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 780,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "9441b3fa.469be",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Fertilizante 1",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 708,
+        "y": 744,
+        "wires": []
+    },
+    {
+        "id": "339284fe.31d0cc",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Fertilizante 2",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 710,
+        "y": 829,
+        "wires": []
+    },
+    {
+        "id": "161dd364.87512d",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Calentador agua",
+        "topic": "Armario/Relay/8",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 672,
+        "y": 684,
+        "wires": []
+    },
+    {
+        "id": "32f76e2f.bd5f72",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "Llenado",
+        "topic": "Armario/Relay/8",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 693,
+        "y": 943,
+        "wires": []
+    },
+    {
+        "id": "f84249a.f8861b8",
+        "type": "inject",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "topic": "",
+        "payload": "Fotoperiodo",
+        "payloadType": "global",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "x": 112,
+        "y": 793,
+        "wires": [
+            [
+                "97bdc5c5.589b98"
+            ]
+        ]
+    },
+    {
+        "id": "97bdc5c5.589b98",
+        "type": "switch",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Vegetativo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Floracion",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 283,
+        "y": 833,
+        "wires": [
+            [
+                "c12ef627.920e48"
+            ],
+            [
+                "7e39f81a.ee6548"
+            ]
+        ]
+    },
+    {
+        "id": "41bcf515.7df0fc",
+        "type": "ui_switch",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "V Intractor/Extractor",
+        "tooltip": "",
+        "group": "1db00bd9.c56a94",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 137,
+        "y": 910,
+        "wires": [
+            [
+                "1dea4a4d.faa3e6"
+            ]
+        ]
+    },
+    {
+        "id": "1dea4a4d.faa3e6",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "VentiladorArmarioEncendido",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 464,
+        "y": 908,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e00c07b3.6ae9b8",
+        "type": "ui_switch",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "V Interno",
+        "tooltip": "",
+        "group": "1db00bd9.c56a94",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 112,
+        "y": 999,
+        "wires": [
+            [
+                "d86b32ee.62a6"
+            ]
+        ]
+    },
+    {
+        "id": "d86b32ee.62a6",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "VentiladorInternoIntermitente",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 476,
+        "y": 1001,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71834098.fd0ae",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "HumedadTarget",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 426,
+        "y": 784,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab582d2c.5293e",
+        "type": "ui_numeric",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "Temperatura",
+        "tooltip": "",
+        "group": "1db00bd9.c56a94",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "Armario/Temperature/Target",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "x": 116,
+        "y": 697,
+        "wires": [
+            [
+                "2b5420b0.7cc6f",
+                "18388d46.002fc3"
+            ]
+        ]
+    },
+    {
+        "id": "2b5420b0.7cc6f",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "HumedadTarget",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 422,
+        "y": 683,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a13446e.77372c",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Fotoperiodo",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 398,
+        "y": 1202,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7abb7e8.a1a508",
+        "type": "ui_dropdown",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "Fotoperiodo",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "1db00bd9.c56a94",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Vegetativo",
+                "value": "Vegetativo",
+                "type": "str"
+            },
+            {
+                "label": "Floracion",
+                "value": "Floracion",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 125,
+        "y": 1123,
+        "wires": [
+            [
+                "7a13446e.77372c",
+                "9277a87b.42b368"
+            ]
+        ]
+    },
+    {
+        "id": "99efd84e.b21618",
+        "type": "bigtimer",
+        "z": "d74a6eaf.194c3",
+        "outtopic": "",
+        "outpayload1": "",
+        "outpayload2": "",
+        "name": "Horario Floracion",
+        "comment": "",
+        "lat": "-34.67865",
+        "lon": "-58.38982",
+        "starttime": "900",
+        "endtime": "180",
+        "starttime2": 0,
+        "endtime2": 0,
+        "startoff": 0,
+        "endoff": 0,
+        "offs": 0,
+        "outtext1": "1",
+        "outtext2": "0",
+        "timeout": 1440,
+        "sun": true,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "jan": true,
+        "feb": true,
+        "mar": true,
+        "apr": true,
+        "may": true,
+        "jun": true,
+        "jul": true,
+        "aug": true,
+        "sep": true,
+        "oct": true,
+        "nov": true,
+        "dec": true,
+        "day1": 0,
+        "month1": 0,
+        "day2": 0,
+        "month2": 0,
+        "day3": 0,
+        "month3": 0,
+        "day4": 0,
+        "month4": 0,
+        "day5": 0,
+        "month5": 0,
+        "day6": 0,
+        "month6": 0,
+        "d1": 0,
+        "w1": 0,
+        "d2": 0,
+        "w2": 0,
+        "d3": 0,
+        "w3": 0,
+        "d4": 0,
+        "w4": 0,
+        "d5": 0,
+        "w5": 0,
+        "d6": 0,
+        "w6": 0,
+        "xday1": 0,
+        "xmonth1": 0,
+        "xday2": 0,
+        "xmonth2": 0,
+        "xday3": 0,
+        "xmonth3": 0,
+        "xday4": 0,
+        "xmonth4": 0,
+        "xday5": 0,
+        "xmonth5": 0,
+        "xday6": 0,
+        "xmonth6": 0,
+        "xd1": 0,
+        "xw1": 0,
+        "xd2": 0,
+        "xw2": 0,
+        "xd3": 0,
+        "xw3": 0,
+        "xd4": 0,
+        "xw4": 0,
+        "xd5": 0,
+        "xw5": 0,
+        "xd6": 0,
+        "xw6": 0,
+        "suspend": false,
+        "random": false,
+        "repeat": false,
+        "atstart": false,
+        "odd": false,
+        "even": false,
+        "x": 586,
+        "y": 906.5,
+        "wires": [
+            [],
+            [],
+            [
+                "808f7c30.5fd6b"
+            ]
+        ]
+    },
+    {
+        "id": "cebef69c.0c9608",
+        "type": "inject",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "topic": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "x": 62,
+        "y": 698,
+        "wires": [
+            [
+                "99efd84e.b21618",
+                "d7503e49.ca6ce"
+            ]
+        ]
+    },
+    {
+        "id": "9277a87b.42b368",
+        "type": "mqtt out",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "topic": "Armario/Fotoperiodo",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 407,
+        "y": 1129,
+        "wires": []
+    },
+    {
+        "id": "d869b589.9f1a88",
+        "type": "mqtt in",
+        "z": "d74a6eaf.194c3",
+        "name": "",
+        "topic": "Armario/Fotoperiodo",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 111,
+        "y": 833,
+        "wires": [
+            [
+                "97bdc5c5.589b98"
+            ]
+        ]
+    },
+    {
+        "id": "7461392f.e85f48",
+        "type": "mqtt in",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "topic": "Armario/Boton/1/press",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 111,
+        "y": 44,
+        "wires": [
+            [
+                "d1093ec9.b22cc"
+            ]
+        ]
+    },
+    {
+        "id": "af3920dc.a9f45",
+        "type": "trigger",
+        "z": "ca9c2265.e239b",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "10",
+        "extend": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 663,
+        "y": 124,
+        "wires": [
+            [
+                "73f996bc.323f78",
+                "c59b7912.7dc938"
+            ]
+        ]
+    },
+    {
+        "id": "c59b7912.7dc938",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Vaciado",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 895,
+        "y": 219,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81a86034.84a81",
+        "type": "switch",
+        "z": "ca9c2265.e239b",
+        "name": "Vaciando",
+        "property": "Vaciado",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 349,
+        "y": 199,
+        "wires": [
+            [
+                "af3920dc.a9f45"
+            ],
+            [
+                "7591286a.c7c388"
+            ]
+        ]
+    },
+    {
+        "id": "7591286a.c7c388",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "Apagar",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 583,
+        "y": 256,
+        "wires": [
+            [
+                "c59b7912.7dc938",
+                "73f996bc.323f78",
+                "af3920dc.a9f45"
+            ]
+        ]
+    },
+    {
+        "id": "7af58b4c.102ab4",
+        "type": "mqtt in",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "topic": "Armario/VaciarTanque",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 105,
+        "y": 207,
+        "wires": [
+            [
+                "81a86034.84a81"
+            ]
+        ]
+    },
+    {
+        "id": "3809e995.a41f46",
+        "type": "mqtt in",
+        "z": "ca9c2265.e239b",
+        "name": "Overflow Tanque",
+        "topic": "Armario/OverflowTanque",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 92,
+        "y": 610,
+        "wires": [
+            [
+                "717b79b1.4ac7d8"
+            ]
+        ]
+    },
+    {
+        "id": "ae5d644b.72a298",
+        "type": "mqtt in",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "topic": "Armario/Boton/2",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 85,
+        "y": 285,
+        "wires": [
+            [
+                "356e0b92.a49634"
+            ]
+        ]
+    },
+    {
+        "id": "d1093ec9.b22cc",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "topic": "Armario/VaciarTanque",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 393,
+        "y": 44,
+        "wires": []
+    },
+    {
+        "id": "356e0b92.a49634",
+        "type": "mqtt out",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "topic": "Armario/Regar",
+        "qos": "",
+        "retain": "",
+        "broker": "891528f7.8683f8",
+        "x": 335,
+        "y": 286,
+        "wires": []
+    },
+    {
+        "id": "801d3cbb.e7655",
+        "type": "mqtt in",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "topic": "Armario/Regar",
+        "qos": "2",
+        "broker": "891528f7.8683f8",
+        "x": 85,
+        "y": 423,
+        "wires": [
+            [
+                "65d9ffe5.c7613",
+                "13459423.3e92ec",
+                "5c301e46.d85bf",
+                "2c44f0c8.4b864",
+                "161dd364.87512d"
+            ]
+        ]
+    },
+    {
+        "id": "d7503e49.ca6ce",
+        "type": "bigtimer",
+        "z": "d74a6eaf.194c3",
+        "outtopic": "",
+        "outpayload1": "",
+        "outpayload2": "",
+        "name": "Horario Vetetativo",
+        "comment": "",
+        "lat": "-34.67865",
+        "lon": "-58.38982",
+        "starttime": "540",
+        "endtime": "180",
+        "starttime2": 0,
+        "endtime2": 0,
+        "startoff": 0,
+        "endoff": 0,
+        "offs": 0,
+        "outtext1": "1",
+        "outtext2": "0",
+        "timeout": 1440,
+        "sun": true,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "jan": true,
+        "feb": true,
+        "mar": true,
+        "apr": true,
+        "may": true,
+        "jun": true,
+        "jul": true,
+        "aug": true,
+        "sep": true,
+        "oct": true,
+        "nov": true,
+        "dec": true,
+        "day1": 0,
+        "month1": 0,
+        "day2": 0,
+        "month2": 0,
+        "day3": 0,
+        "month3": 0,
+        "day4": 0,
+        "month4": 0,
+        "day5": 0,
+        "month5": 0,
+        "day6": 0,
+        "month6": 0,
+        "d1": 0,
+        "w1": 0,
+        "d2": 0,
+        "w2": 0,
+        "d3": 0,
+        "w3": 0,
+        "d4": 0,
+        "w4": 0,
+        "d5": 0,
+        "w5": 0,
+        "d6": 0,
+        "w6": 0,
+        "xday1": 0,
+        "xmonth1": 0,
+        "xday2": 0,
+        "xmonth2": 0,
+        "xday3": 0,
+        "xmonth3": 0,
+        "xday4": 0,
+        "xmonth4": 0,
+        "xday5": 0,
+        "xmonth5": 0,
+        "xday6": 0,
+        "xmonth6": 0,
+        "xd1": 0,
+        "xw1": 0,
+        "xd2": 0,
+        "xw2": 0,
+        "xd3": 0,
+        "xw3": 0,
+        "xd4": 0,
+        "xw4": 0,
+        "xd5": 0,
+        "xw5": 0,
+        "xd6": 0,
+        "xw6": 0,
+        "suspend": false,
+        "random": false,
+        "repeat": false,
+        "atstart": false,
+        "odd": false,
+        "even": false,
+        "x": 586,
+        "y": 789,
+        "wires": [
+            [],
+            [],
+            [
+                "808f7c30.5fd6b"
+            ]
+        ]
+    },
+    {
+        "id": "c12ef627.920e48",
+        "type": "change",
+        "z": "d74a6eaf.194c3",
+        "name": "On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "auto",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 405,
+        "y": 788,
+        "wires": [
+            [
+                "d7503e49.ca6ce"
+            ]
+        ]
+    },
+    {
+        "id": "7e39f81a.ee6548",
+        "type": "change",
+        "z": "d74a6eaf.194c3",
+        "name": "On",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "auto",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 405,
+        "y": 905,
+        "wires": [
+            [
+                "99efd84e.b21618"
+            ]
+        ]
+    },
+    {
+        "id": "13459423.3e92ec",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "Fertilizante1Ml",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number($globalContext(\"Fertilizante1Ml\"))",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 346,
+        "y": 738,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5c301e46.d85bf",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "Fertilizante2Ml",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number($globalContext(\"Fertilizante2Ml\"))*$number($globalContext(\"PertistalticMlRatio\"))",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 327,
+        "y": 819,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "285ea82d.10f038",
+        "type": "ui_numeric",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "Agua Ml",
+        "tooltip": "",
+        "group": "ef47ba1f.91c1a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3000",
+        "step": "100",
+        "x": 155,
+        "y": 1350,
+        "wires": [
+            [
+                "7c14c937.4c99f8"
+            ]
+        ]
+    },
+    {
+        "id": "4fb35943.7c8198",
+        "type": "ui_numeric",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "Fertilizante 1 Ml",
+        "tooltip": "",
+        "group": "ef47ba1f.91c1a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "step": "10",
+        "x": 162,
+        "y": 1403,
+        "wires": [
+            [
+                "22a37df3.bacaa2"
+            ]
+        ]
+    },
+    {
+        "id": "36f0cfa0.9f853",
+        "type": "ui_numeric",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "label": "Fertilizante 2 Ml",
+        "tooltip": "",
+        "group": "ef47ba1f.91c1a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "step": "10",
+        "x": 158,
+        "y": 1460,
+        "wires": [
+            [
+                "6464ba6e.545804"
+            ]
+        ]
+    },
+    {
+        "id": "22a37df3.bacaa2",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Fertilizante1Ml",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 498,
+        "y": 1403,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6464ba6e.545804",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Fertilizante2Ml",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 485,
+        "y": 1464,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c14c937.4c99f8",
+        "type": "change",
+        "z": "544987cc.a65b88",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "AguaMl",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 482,
+        "y": 1351,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c44f0c8.4b864",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "AguaMl",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number($globalContext(\"AguaMl\"))",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 328,
+        "y": 422,
+        "wires": [
+            [
+                "9371851a.2991a8",
+                "e4a5f9f6.694198"
+            ]
+        ]
+    },
+    {
+        "id": "9371851a.2991a8",
+        "type": "function",
+        "z": "ca9c2265.e239b",
+        "name": "payload Trigger",
+        "func": "var t = 0;\nif (msg.reset != 0)\n{\n    clearTimeout(t);\n    node.status({fill:\"red\",shape:\"ring\",text:\"Disabled\"});\n    //msg.payload = \"0\"\n    //node.send(msg)\n}\nif (msg.payload != 0)\n{\n    var number = msg.payload;\n\n    node.status({fill:\"green\",shape:\"dot\",text:\"Enabled\"});\n    msg.payload = \"1\"\n    node.send(msg)\n\nt = setTimeout(function()\n{\n    node.status({fill:\"red\",shape:\"ring\",text:\"Disabled\"});\n    msg.payload = \"0\"\n    node.send(msg)\n}   , number); // sets timeout\n\n\nreturn null;\n\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 498,
+        "y": 422,
+        "wires": [
+            [
+                "d961a01b.11978",
+                "ba4eed7c.cf6ca",
+                "e4a5f9f6.694198"
+            ]
+        ]
+    },
+    {
+        "id": "717b79b1.4ac7d8",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 278,
+        "y": 610,
+        "wires": [
+            [
+                "d961a01b.11978",
+                "65d9ffe5.c7613",
+                "161dd364.87512d"
+            ]
+        ]
+    },
+    {
+        "id": "ba4eed7c.cf6ca",
+        "type": "switch",
+        "z": "ca9c2265.e239b",
+        "name": "When Off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 657,
+        "y": 474,
+        "wires": [
+            [
+                "65884e5f.462f4"
+            ]
+        ]
+    },
+    {
+        "id": "65884e5f.462f4",
+        "type": "delay",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 667,
+        "y": 520,
+        "wires": [
+            [
+                "15bc6b56.26d2c5",
+                "d494caef.6abb18"
+            ]
+        ]
+    },
+    {
+        "id": "15bc6b56.26d2c5",
+        "type": "trigger",
+        "z": "ca9c2265.e239b",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "30",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 696,
+        "y": 589,
+        "wires": [
+            [
+                "b1cd4950.2888e8",
+                "e4a5f9f6.694198"
+            ]
+        ]
+    },
+    {
+        "id": "d494caef.6abb18",
+        "type": "change",
+        "z": "ca9c2265.e239b",
+        "name": "Off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 508,
+        "y": 580,
+        "wires": [
+            [
+                "65d9ffe5.c7613",
+                "161dd364.87512d"
+            ]
+        ]
+    },
+    {
+        "id": "e4a5f9f6.694198",
+        "type": "debug",
+        "z": "ca9c2265.e239b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 928,
+        "y": 318,
+        "wires": []
+    }
+]
