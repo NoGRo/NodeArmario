@@ -72,11 +72,11 @@ async function f() {
             let pinNumber = topic.split("/")[2];
 
             if (!relays.hasOwnPropery(pinNumber))
-                return; cancelAnimationFrame
+                return; 
 
             if (payload == "1")
                 relays[pinNumber].on();
-            else
+            else if (payload == "0")
                 relays[pinNumber].off();
         }
     });
