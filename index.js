@@ -13,9 +13,7 @@ var buttons = {};
 
 function GetBoard() {
     return new Promise((resolve, reject) => {
-        var board = new five.Board({
-            io: new firmata()
-        });
+        var board = new five.Board({io: new pcDuino()});
         board.on("ready", () => {
             resolve(board);
         });
