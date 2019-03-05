@@ -4,6 +4,6 @@ npm install -g node-red-contrib-bigtimer
 npm install -g node-red-contrib-persist
 npm install mosca pino -g
 
-
-node-red
-mosca
+npm install pm2 -g
+pm2 start mosca
+pm2 start node-red
