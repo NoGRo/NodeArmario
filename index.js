@@ -1,9 +1,10 @@
 var five = require("johnny-five");
+var pcDuino = require("pcduino-io");
 var mqtt = require("mqtt");
 
 var intervalSensors = 3 * (60 * 1000);
 var inTopics = 'Armario/Relay/#';
-
+sss
 var soilPin = "a1";
 var dhtPin = 11
 var relayPins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13];

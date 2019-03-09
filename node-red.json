@@ -42,6 +42,13 @@
         "info": ""
     },
     {
+        "id": "aeff9ac1.39a408",
+        "type": "tab",
+        "label": "Hardware",
+        "disabled": true,
+        "info": ""
+    },
+    {
         "id": "ee72035b.525fc",
         "type": "subflow",
         "name": "Ventilador",
@@ -585,6 +592,29 @@
         "collapse": true
     },
     {
+        "id": "2786185f.9f4da8",
+        "type": "nodebot",
+        "z": "",
+        "name": "",
+        "username": "",
+        "password": "",
+        "boardType": "beaglebone-io",
+        "serialportName": "",
+        "connectionType": "local",
+        "mqttServer": "",
+        "pubTopic": "",
+        "subTopic": "",
+        "tcpHost": "",
+        "tcpPort": "",
+        "sparkId": "",
+        "sparkToken": "",
+        "beanId": "",
+        "impId": "",
+        "uuid": "",
+        "token": "",
+        "sendUuid": ""
+    },
+    {
         "id": "c01b87a2.c82678",
         "type": "ui_numeric",
         "z": "f727ece7.d502",
@@ -634,8 +664,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 650,
-        "y": 340,
+        "x": 666.75,
+        "y": 353.75,
         "wires": []
     },
     {
@@ -2124,8 +2154,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 630,
-        "y": 560,
+        "x": 644,
+        "y": 571,
         "wires": []
     },
     {
@@ -2133,8 +2163,8 @@
         "type": "subflow:ee72035b.525fc",
         "z": "19014767.b6ae39",
         "name": "",
-        "x": 460,
-        "y": 560,
+        "x": 463,
+        "y": 574,
         "wires": [
             [
                 "7c0d4065.3dc94"
@@ -2182,8 +2212,8 @@
         "type": "subflow:ee72035b.525fc",
         "z": "19014767.b6ae39",
         "name": "",
-        "x": 460,
-        "y": 340,
+        "x": 465.25,
+        "y": 353.75,
         "wires": [
             [
                 "d6ae0d9c.0652c"
@@ -2504,8 +2534,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 620,
-        "y": 453,
+        "x": 636,
+        "y": 467.75,
         "wires": []
     },
     {
@@ -2517,7 +2547,7 @@
         "qos": "2",
         "broker": "855a2cc.f3e5bd",
         "x": 103,
-        "y": 460.75,
+        "y": 467.75,
         "wires": [
             [
                 "fa44aa0b.4f1538"
@@ -2537,7 +2567,7 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 105,
-        "y": 419.75,
+        "y": 426.75,
         "wires": [
             [
                 "fa44aa0b.4f1538"
@@ -2550,7 +2580,7 @@
         "z": "19014767.b6ae39",
         "name": "",
         "x": 460,
-        "y": 453,
+        "y": 460,
         "wires": [
             [
                 "7994994f.1d0e98"
@@ -5309,8 +5339,8 @@
         "type": "subflow:fa7bb1d6.15af7",
         "z": "19014767.b6ae39",
         "name": "Fotoperiodo",
-        "x": 450,
-        "y": 840,
+        "x": 458.5000534057617,
+        "y": 830.2500247955322,
         "wires": [
             [
                 "e92e04b6.46bd98"
@@ -5366,8 +5396,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 630,
-        "y": 840,
+        "x": 618.7500076293945,
+        "y": 838.5,
         "wires": []
     },
     {
@@ -5393,8 +5423,8 @@
         "crontab": "",
         "once": true,
         "onceDelay": "0.1",
-        "x": 130,
-        "y": 800,
+        "x": 130.99999237060547,
+        "y": 778.7500123977661,
         "wires": [
             [
                 "dcec5071.7dad4"
@@ -5409,8 +5439,8 @@
         "topic": "Armario/Fotoperiodo",
         "qos": "2",
         "broker": "855a2cc.f3e5bd",
-        "x": 130,
-        "y": 840,
+        "x": 129.74999237060547,
+        "y": 822.7500009536743,
         "wires": [
             [
                 "dcec5071.7dad4"
@@ -5560,8 +5590,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 875.6250381469727,
-        "y": 526.750020980835,
+        "x": 850,
+        "y": 600,
         "wires": [
             [
                 "51a8c57c.68fd3c"
@@ -5578,8 +5608,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 1073.1250381469727,
-        "y": 526.750020980835,
+        "x": 1047.5,
+        "y": 600,
         "wires": []
     },
     {
@@ -5611,8 +5641,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 876.0000305175781,
-        "y": 579.0000171661377,
+        "x": 850.3749923706055,
+        "y": 652.2499961853027,
         "wires": [
             [
                 "4ca25da.eb0fea4"
@@ -5629,8 +5659,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 1073.5000305175781,
-        "y": 579.0000171661377,
+        "x": 1047.8749923706055,
+        "y": 652.2499961853027,
         "wires": []
     },
     {
@@ -5662,8 +5692,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 857.0000381469727,
-        "y": 426.00002098083496,
+        "x": 831.375,
+        "y": 499.25,
         "wires": [
             [
                 "b6087051.a536f"
@@ -5680,8 +5710,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 1054.5000381469727,
-        "y": 426.00002098083496,
+        "x": 1028.875,
+        "y": 499.25,
         "wires": []
     },
     {
@@ -5697,8 +5727,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 856.0000381469727,
-        "y": 472.00002098083496,
+        "x": 830.375,
+        "y": 545.25,
         "wires": [
             [
                 "bda9896.a110d78"
@@ -5715,8 +5745,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 1053.5000381469727,
-        "y": 472.00002098083496,
+        "x": 1027.875,
+        "y": 545.25,
         "wires": []
     },
     {
@@ -6229,8 +6259,8 @@
         "topic": "Armario/LuzMantenimiento",
         "qos": "2",
         "broker": "855a2cc.f3e5bd",
-        "x": 410,
-        "y": 760,
+        "x": 436,
+        "y": 740,
         "wires": [
             [
                 "e92e04b6.46bd98"
@@ -6272,8 +6302,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 130,
-        "y": 760,
+        "x": 130.5,
+        "y": 731,
         "wires": [
             [
                 "dcec5071.7dad4"
@@ -6680,7 +6710,7 @@
         "order": 5,
         "width": "2",
         "height": "1",
-        "format": "<script>\nthis.scope.on = {payload: 1};\nthis.scope.off = {payload: 0};\n</script>\n\n<md-button\n   ng-touchstart=\"send(on)\"\n   ng-mousedown=\"send(on)\"\n   ng-touchend=\"send(off)\"\n   ng-mouseup=\"send(off)\">\n       Iniciar\n</md-button>",
+        "format": "<script>\nthis.scope.on = {payload: 1};\nthis.scope.off = {payload: 0};\n</script>\n<md-button\n   ng-touchstart=\"send(on)\"\n   ng-mousedown=\"send(on)\"\n   ng-touchend=\"send(off)\"\n   ng-mouseup=\"send(off)\">\n       Iniciar\n</md-button>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
@@ -6745,8 +6775,8 @@
         "func": "global.set(flow.get(\"Bomba\") + \"Ratio\", msg.payload)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 884.0003490447998,
-        "y": 1010.6668586730957,
+        "x": 880,
+        "y": 1000,
         "wires": [
             [
                 "76329d9c.d12244",
@@ -7031,12 +7061,11 @@
         "func": "msg.topic = 'Pulse/' +  flow.get('Bomba');\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 332.16668701171875,
-        "y": 945.0000076293945,
+        "x": 350,
+        "y": 940,
         "wires": [
             [
-                "bd16d1ae.bf5b8",
-                "3cc8cd0c.399222"
+                "bd16d1ae.bf5b8"
             ]
         ]
     },
@@ -7049,22 +7078,8 @@
         "qos": "",
         "retain": "",
         "broker": "855a2cc.f3e5bd",
-        "x": 542.1666793823242,
-        "y": 954.0000076293945,
-        "wires": []
-    },
-    {
-        "id": "3cc8cd0c.399222",
-        "type": "debug",
-        "z": "dd4b3d65.557db",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "x": 535.1666870117188,
-        "y": 906,
+        "x": 540,
+        "y": 940,
         "wires": []
     },
     {
@@ -7080,8 +7095,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "global",
-        "x": 898.1667709350586,
-        "y": 378.6666774749756,
+        "x": 872.5417327880859,
+        "y": 451.9166564941406,
         "wires": [
             []
         ]
@@ -7107,6 +7122,21 @@
             [
                 "fd762b62.eaf9c8"
             ]
+        ]
+    },
+    {
+        "id": "37feb3e1.c36eec",
+        "type": "gpio in",
+        "z": "aeff9ac1.39a408",
+        "name": "",
+        "state": "INPUT",
+        "samplingInterval": "300",
+        "pin": "",
+        "board": "2786185f.9f4da8",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            []
         ]
     }
 ]
