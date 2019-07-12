@@ -1,3 +1,25 @@
+Rasberry pi 3
+
+
+bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+/*
+sudo apt-get install npm
+sudo npm install npm -g
+*/
+
+sudo npm install -g node-red-dashboard
+sudo npm install -g node-red-contrib-bigtimer
+sudo npm install -g node-red-contrib-persist
+sudo npm install -g johnny-five
+
+sudo apt install -y mosquitto
+sudo systemctl enable mosquitto.service
+
+node-red-start
+sudo systemctl enable nodered.service
+
+
+
 
 imagen armbian para pcduino2
 https://dl.armbian.com/pcduino2/Debian_jessie_next.7z.torrent
